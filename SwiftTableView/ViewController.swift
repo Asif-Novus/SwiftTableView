@@ -18,11 +18,9 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         
         let screenSize:CGRect = UIScreen.mainScreen().bounds
         
-        //tableView = UITableView(frame: CGRectMake(0, 0, screenSize.width, screenSize.height), style: UITableViewStyle.Plain)
         tableView.frame = CGRectMake(0, 50, screenSize.width, screenSize.height-50)
         tableView.delegate      =   self
         tableView.dataSource    =   self
-        //tableView.registerClass(CustomTableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.registerClass(CustomTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
 
         self.view.addSubview(self.tableView)
@@ -69,7 +67,7 @@ class CustomTableViewCell: UITableViewCell {
     var labName = UILabel();
     
    
-    
+    //Notes: This will NOT get called unless you call "registerClass, forCellReuseIdentifier" on your tableview
     override init(style: UITableViewCellStyle, reuseIdentifier: String!)
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -81,6 +79,8 @@ class CustomTableViewCell: UITableViewCell {
         self.addSubview(self.labName)
     }
     
+    //Notes: This function is apparently required; gets called by default if you don't call "registerClass, forCellReuseIdentifier" on your tableview
+ 
     required init(coder aDecoder: NSCoder)
     {
         //Just Call Super
