@@ -12,13 +12,16 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
 
     var tableView: UITableView  =   UITableView()
     let animals : [String] = ["Dogs","Cats","Mice"]
+    var viewExample : UIView = UIView()
+     let screenSize:CGRect = UIScreen.mainScreen().bounds
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let screenSize:CGRect = UIScreen.mainScreen().bounds
+       
         
-        tableView.frame = CGRectMake(0, 50, screenSize.width, screenSize.height-50)
+        tableView.frame = CGRectMake(0, 50, screenSize.width, 200)
         tableView.delegate      =   self
         tableView.dataSource    =   self
         tableView.registerClass(CustomTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
@@ -26,11 +29,27 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         self.view.addSubview(self.tableView)
         
         
+        
+        
+        
+        viewExample = UIView(frame: CGRectMake(screenSize.width, screenSize.height/2, 100, 100))
+        viewExample.backgroundColor = UIColor.lightGrayColor()
+        self.view.addSubview(viewExample)
+        
+        var  btnFirst = UIButton(frame: CGRectMake(10, 10, 100, 20))
+        btnFirst.backgroundColor = UIColor.blackColor()
+        
+        btnFirst.setTitle("Close", forState: .Normal)
+        btnFirst.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        btnFirst.addTarget(self, action: "buttonAction", forControlEvents: .TouchUpInside)
+     
+        viewExample.addSubview(btnFirst)
     }
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+       
         return animals.count
         
     }
@@ -49,8 +68,39 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     {
         print(animals[indexPath.row])
         
+        self.getAnimation()
+        
     }
     
+    func getAnimation(){
+        
+        print("Get Animation called")
+        
+        UIView.animateWithDuration(0.7, delay: 1.0, options: .CurveEaseOut, animations: {
+        
+            
+            self.viewExample.frame = CGRectMake(self.screenSize.width-self.viewExample.frame.size.width,self.screenSize.height/2 , 100, 100)
+            
+        
+            }, completion: { finished in
+        })
+        
+    }
+    
+    func buttonAction(){
+       
+        UIView.animateWithDuration(0.7, delay: 1.0, options: .CurveEaseOut, animations: {
+            
+            
+            self.viewExample.frame = CGRectMake(self.screenSize.width, self.screenSize.height/2, 100, 100)
+            
+            
+            }, completion: { finished in
+        })
+
+        
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -59,6 +109,7 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
 
 
 }
+
 
 
 
