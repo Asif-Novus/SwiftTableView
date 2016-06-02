@@ -13,15 +13,16 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     var tableView: UITableView  =   UITableView()
     let animals : [String] = ["Dogs","Cats","Mice"]
     var viewExample : UIView = UIView()
+    
      let screenSize:CGRect = UIScreen.mainScreen().bounds
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        self.view.backgroundColor = UIColor.lightGrayColor()
         
-        tableView.frame = CGRectMake(0, 50, screenSize.width, 200)
+        tableView.frame = CGRectMake(0, 0, screenSize.width, 200)
         tableView.delegate      =   self
         tableView.dataSource    =   self
         tableView.registerClass(CustomTableViewCell.classForCoder(), forCellReuseIdentifier: "cell")
@@ -69,6 +70,9 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
         print(animals[indexPath.row])
         
         self.getAnimation()
+        
+        let vc = NewViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     

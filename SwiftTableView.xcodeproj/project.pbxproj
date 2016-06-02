@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D41BFEC1D006FB6000A7768 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D41BFEB1D006FB6000A7768 /* NewViewController.swift */; };
 		7DBE0C661CFDC5F300518FEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBE0C651CFDC5F300518FEA /* AppDelegate.swift */; };
 		7DBE0C681CFDC5F300518FEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBE0C671CFDC5F300518FEA /* ViewController.swift */; };
 		7DBE0C6B1CFDC5F300518FEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DBE0C691CFDC5F300518FEA /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D41BFEB1D006FB6000A7768 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		7DBE0C621CFDC5F300518FEA /* SwiftTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DBE0C651CFDC5F300518FEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DBE0C671CFDC5F300518FEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				7DBE0C651CFDC5F300518FEA /* AppDelegate.swift */,
 				7DBE0C671CFDC5F300518FEA /* ViewController.swift */,
+				7D41BFEB1D006FB6000A7768 /* NewViewController.swift */,
 				7DBE0C691CFDC5F300518FEA /* Main.storyboard */,
 				7DBE0C6F1CFDC5F300518FEA /* Assets.xcassets */,
 				7DBE0C711CFDC5F300518FEA /* LaunchScreen.storyboard */,
@@ -190,6 +193,7 @@
 		7DBE0C5A1CFDC5F300518FEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Jamil;
 				TargetAttributes = {
@@ -261,6 +265,7 @@
 				7DBE0C681CFDC5F300518FEA /* ViewController.swift in Sources */,
 				7DBE0C6E1CFDC5F300518FEA /* SwiftTableView.xcdatamodeld in Sources */,
 				7DBE0C661CFDC5F300518FEA /* AppDelegate.swift in Sources */,
+				7D41BFEC1D006FB6000A7768 /* NewViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,10 +407,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftTableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.novus.SwiftTableView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -413,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = SwiftTableView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.novus.SwiftTableView;
@@ -487,6 +495,7 @@
 				7DBE0C8F1CFDC5F400518FEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7DBE0C901CFDC5F400518FEA /* Build configuration list for PBXNativeTarget "SwiftTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +504,7 @@
 				7DBE0C921CFDC5F400518FEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7DBE0C931CFDC5F400518FEA /* Build configuration list for PBXNativeTarget "SwiftTableViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +513,7 @@
 				7DBE0C951CFDC5F400518FEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
